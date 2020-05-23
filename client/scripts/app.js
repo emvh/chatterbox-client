@@ -15,7 +15,7 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
     //set inerval >> everty 10 seconds, update our messages >>call app.fetch
-
+    setInterval(App.fetch, 3000);
   },
   //Parse.readAll(function)
   // this is passing in a default argument if nothing is passed in
@@ -26,16 +26,16 @@ var App = {
   // you have to pass in a callback in the fetch
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      //update model
+      // update model
       // this is the success callback
-      //{result:[{a bunch of message},{},{}]
+      // {result:[{a bunch of message},{},{}]}
       if (data.results.length === 0 || !data.results) {
         return;
       }
       // examine the response from the server request:
-      console.log('entire data: ', data);
-      console.log('messages array: ', data.results);
-      console.log('one message: ', data.results[0]); // logs an object with results property equal to array 100 object messages
+      console.log('entire data: ', data); // logs an object with a results property with a value equal to an array of 100 object messages
+
+
       Messages.update(data.results, MessagesView.render);
 
       callback();
