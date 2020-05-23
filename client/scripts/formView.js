@@ -21,7 +21,7 @@ var FormView = {
     var messageObj = {
       username: username,
       text: text,
-      roomname: `emily's room`
+      roomname: `blahb room`
     };
     //call parse.create to send a post request
     // Parse.create(message, Messages.add));

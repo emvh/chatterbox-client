@@ -16,9 +16,9 @@ var MessagesView = {
 
     // data = { 11111: {} }
 
-    for (var key in Messages.data) {
+    for (var i = 0; i < Messages.data.length; i++) {
       // console.log(Messages.data[key])
-      var msg = MessageView.render(Messages.data[key]);//template
+      var msg = MessageView.render(Messages.data[i]);//template
       MessagesView.$chats.append(msg);
 
       // console.log('rendermsg2', renderMsg);
@@ -37,7 +37,7 @@ var MessagesView = {
 
     console.log('rendermsg2', renderMsg);
 
-    MessagesView.$chats.append(renderMsg);
+    MessagesView.$chats.prepend(renderMsg);
   },
 
 };

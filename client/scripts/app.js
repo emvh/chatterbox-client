@@ -15,7 +15,7 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
     //set inerval >> everty 10 seconds, update our messages >>call app.fetch
-    setInterval(App.fetch, 3000);
+    // setInterval(App.fetch, 3000);
   },
   //Parse.readAll(function)
   // this is passing in a default argument if nothing is passed in
